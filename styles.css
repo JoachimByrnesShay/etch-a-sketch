@@ -3,13 +3,22 @@
     box-sizing: border-box;
 }
 
-body {
+body, button {
     margin: 0;
+}
+body {
     height: 100vh;
     background:lightblue;
     display:flex;
+    flex-direction: column;
     justify-content:center;
     align-items: center;
+}
+
+.configure-grid {
+    background: pink;
+    width: 100px;
+    height: 50px;
 }
 
 .container {
@@ -23,9 +32,7 @@ body {
 
 .square {
     border: 1px solid black;
-    background:orange;
-    flex: 1 1 25%;
-    height: 25%;
+    background:orange;     
 }
 
 .square.touched {
