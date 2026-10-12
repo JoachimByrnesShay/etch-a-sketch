@@ -9,6 +9,14 @@ function createUI() {
     createGrid(16);
 }
 
+function getRandomRGB() {
+    let values = []
+    for (let i = 0; i < 3; i++){
+        values.push( Math.floor(Math.random()*256));
+    }
+    return `rgb(${values.join(",")})`
+};
+
 function touchSquareHandler(e) {
     console.log(e)
     const sq = e.target;
@@ -25,14 +33,6 @@ function touchSquareHandler(e) {
         sq.style.opacity = String(val);
     }
 }
-
-function getRandomRGB() {
-    let values = []
-    for (let i = 0; i < 3; i++){
-        values.push( Math.floor(Math.random()*256));
-    }
-    return `rgb(${values.join(",")})`
-};
 
 function gridHandler(e) {
     let size;
@@ -55,19 +55,17 @@ function gridHandler(e) {
     
     CONTAINER.innerHTML = "";
     createGrid(size);
-
 }
 
 function createGrid(size) {
        for (let i = 0; i < size*size; i++){
         const square = document.createElement("div");
         square.classList.add("square");
-        square.addEventListener("mouseover", touchSquareHandler)
+        square.addEventListener("mouseenter", touchSquareHandler)
         CONTAINER.appendChild(square);
         const val = 100 / size;
         square.style.width = `${val}%`;
         square.style.height = `${val}%`;
-        
     }
 }
 

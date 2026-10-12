@@ -6,6 +6,7 @@
 body, button {
     margin: 0;
 }
+
 body {
     height: 100vh;
     background:white;
@@ -17,7 +18,7 @@ body {
 
 .configure-grid {
     background: pink;
-    width: 100px;
+    width: 150px;
     height: 50px;
     margin-bottom: 10px;
 }
@@ -25,17 +26,14 @@ body {
 .container {    
     width:800px;
     height: 800px;
-   
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
+    cursor: pointer;
 }
 
 .square {
-    border: 1px solid black;
-    background:orange;     
+    border: 1px solid rgb(0,0,0,1);
+    background:orange;         
 }
 
-.square.touched {
-    background:blue;
-}
