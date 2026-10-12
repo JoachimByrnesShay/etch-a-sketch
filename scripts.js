@@ -10,12 +10,20 @@ function createUI() {
 }
 
 function touchSquareHandler(e) {
+    console.log(e)
     const sq = e.target;
     if (!sq.classList.contains("touched")){
-         const bg = getRandomRGB();
-        e.target.style.backgroundColor = bg;
+        const bg = getRandomRGB();
+        sq.style.backgroundColor = bg;
+        sq.style.opacity = "0.19";
+        sq.classList.add("touched");
+        return;
     }
-    e.target.classList.add("touched");
+    let val = Number(sq.style.opacity);
+    if (val < 1){
+        val += 0.09;
+        sq.style.opacity = String(val);
+    }
 }
 
 function getRandomRGB() {
