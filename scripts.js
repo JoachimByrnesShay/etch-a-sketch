@@ -10,8 +10,21 @@ function createUI() {
 }
 
 function touchSquareHandler(e) {
-    e.target.classList.toggle("touched");
+    const sq = e.target;
+    if (!sq.classList.contains("touched")){
+         const bg = getRandomRGB();
+        e.target.style.backgroundColor = bg;
+    }
+    e.target.classList.add("touched");
 }
+
+function getRandomRGB() {
+    let values = []
+    for (let i = 0; i < 3; i++){
+        values.push( Math.floor(Math.random()*256));
+    }
+    return `rgb(${values.join(",")})`
+};
 
 function gridHandler(e) {
     let size;
@@ -24,6 +37,7 @@ function gridHandler(e) {
             break;
         }
         size = Number(size);
+        // NaN || float || out of range
         if (!size || size != parseInt(size) || size < 2 || size > 100){
             promptMsg = "Enter an integer value from 2 to 100";
         } else {
@@ -45,6 +59,7 @@ function createGrid(size) {
         const val = 100 / size;
         square.style.width = `${val}%`;
         square.style.height = `${val}%`;
+        
     }
 }
 
