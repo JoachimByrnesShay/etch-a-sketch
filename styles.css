@@ -19,9 +19,10 @@ body {
     background: pink;
     width: 100px;
     height: 50px;
+    margin-bottom: 10px;
 }
 
-.container {
+.container {    
     width:800px;
     height: 800px;
     background: green;

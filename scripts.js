@@ -14,8 +14,23 @@ function touchSquareHandler(e) {
 }
 
 function gridHandler(e) {
-    const size = Number(prompt("What sized grid would you like, max 100"));
-    const availableWidth = document.querySelector(".container").clientWidth;
+    let size;
+    let promptMsg = "What sized grid would you like, max 100";
+    while (true){
+        size = prompt(promptMsg);
+        // cancel or esc of prompt is allowed, use default
+        if (size == null) {
+            size = 16;
+            break;
+        }
+        size = Number(size);
+        if (!size || size != parseInt(size) || size < 2 || size > 100){
+            promptMsg = "Enter an integer value from 2 to 100";
+        } else {
+            break;
+        }
+    }
+    
     CONTAINER.innerHTML = "";
     createGrid(size);
 
@@ -30,7 +45,6 @@ function createGrid(size) {
         const val = 100 / size;
         square.style.width = `${val}%`;
         square.style.height = `${val}%`;
-        square.style.flex = `1 1 ${val}%`
     }
 }
 
