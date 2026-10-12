@@ -1,0 +1,29 @@
+*, *::before, *::after {
+    /* reset rule from https://piccalil.li/blog/the-box-model-and-box-sizing/ */
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background:lightblue;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.container {
+    width:800px;
+    height: 800px;
+    background: green;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.square {
+    border: 1px solid black;
+    background:orange;
+    flex: 1 1 25%;
+    height: 25%;
+}
