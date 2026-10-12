@@ -27,3 +27,7 @@ body {
     flex: 1 1 25%;
     height: 25%;
 }
+
+.square.touched {
+    background:blue;
+}
